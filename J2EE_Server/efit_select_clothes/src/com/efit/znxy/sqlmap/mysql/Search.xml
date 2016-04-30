@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE sqlMap
+PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="Search">
+<typeAlias alias="Search" type="com.efit.znxy.entity.Search" />
+	<select id="findKeyword" resultClass="java.lang.String"
+		parameterClass="java.lang.String">
+		select  keyword FROM search group by user_name,keyword
+		HAVING user_name=#username# and  count(*)>3 ORDER by RAND() desc limit 1
+	</select>
+	
+	<insert id="insert" parameterClass="Search">
+		insert into Search
+		(user_name,keyword,sub_time)
+		values(#username#,#keyword#,#subTime#)
+	</insert>
+	
+	<select id="findKeywords" resultClass="java.lang.String" parameterClass="java.util.HashMap">
+		select  keyword FROM search 
+		<dynamic prepend="where">
+		<isNotEmpty prepend="and" property="username">
+		user_name = #username#
+		</isNotEmpty>
+		</dynamic>
+		group by keyword  ORDER by count(*) desc
+		<isNotEmpty prepend="limit" property="limit">
+		 $limit$
+		</isNotEmpty>
+	</select>
+</sqlMap>

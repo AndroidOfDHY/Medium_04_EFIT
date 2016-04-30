@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE sqlMap
+PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="Share">
+	<typeAlias alias="Share" type="com.efit.znxy.entity.Share" />
+
+	<resultMap id="FullResultMap" class="Share">
+		<result property="shareId" column="share_id" />
+		<result property="userId" column="user_id" />
+		<result property="userName" column="user_name" />
+		<result property="sharePath" column="share_path" />
+		<result property="shareTime" column="share_time" />
+		<result property="tId" column="t_id" />
+		<result property="tName" column="t_name" />
+		<result property="tDetail" column="t_detail" />
+		<result property="dId" column="d_id" />
+		<result property="dName" column="d_name" />
+		<result property="dDetail" column="d_detail" />
+	</resultMap>
+	
+	<resultMap id="SimpleResultMap" class="Share">
+		<result property="shareId" column="share_id" />
+		<result property="userName" column="user_name" />
+		<result property="sharePath" column="share_path" />
+		<result property="shareTime" column="share_time" />
+		<result property="tName" column="t_name" />
+		<result property="dName" column="d_name" />
+	</resultMap>
+	<insert id="insert" parameterClass="Share">
+		insert into share
+		(share_id,user_id,user_name,share_path,share_time,t_id,t_name,t_detail,d_id,d_name,d_detail)
+		values(#shareId#,#userId#,#userName#,#sharePath#,#shareTime#,#tId#,#tName#,#tDetail#,#dId#,#dName#,#dDetail#)
+	</insert>
+	<select id="pageCount" resultClass="java.lang.Integer"
+		parameterClass="java.util.HashMap">
+		select count(*) FROM share
+	</select>
+	<select id="pageProperty" resultMap="SimpleResultMap" parameterClass="java.util.HashMap">
+		select share_id,user_name,share_path,share_time,t_name,d_name FROM share
+		order by share_time desc limit $offset$,$lastRows$
+	</select>
+	
+	<select id="findById" resultMap="FullResultMap"
+		parameterClass="java.lang.String">
+		select * FROM share where share_id=#shareId#
+	</select>
+	
+  <delete id="delete" parameterClass="java.lang.String">
+   delete from share where share_id = #sahreId#
+   </delete>
+</sqlMap>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE sqlMapConfig   
+PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"   
+"http://www.ibatis.com/dtd/sql-map-config-2.dtd">  
+<sqlMapConfig>
+	<properties resource="jdbc.properties"/>
+	<settings   
+	 cacheModelsEnabled="true"  
+	 lazyLoadingEnabled="true"
+	 enhancementEnabled="true"   
+	 errorTracingEnabled="true"  
+	 maxRequests="32" 
+	 maxSessions="10"   
+	 maxTransactions="5"
+	 useStatementNamespaces="true"/>  
+	<transactionManager type="JDBC">  
+		<dataSource type="SIMPLE">
+			<property name="JDBC.Driver" value="${jdbc.driverClass}"/>
+			<property name="JDBC.ConnectionURL" value="${jdbc.jdbcUrl}"/>
+			<property name="JDBC.Username" value="${jdbc.user}"/>
+			<property name="JDBC.Password" value="${jdbc.password}"/>
+			<property name="Pool.MaximumActiveConnections" value="10" /> 
+			<property name="Pool.MaximumIdleConnections" value="5"/>
+			<property name="Pool.MaximumCheckoutTime" value="120000"/> 
+			<property name="TimeToWait" value="500"/>
+		</dataSource>
+	</transactionManager>  
+	
+	<!--  <sqlMap resource="com/efit/test/sqlmap/mysql/Clothes.xml"/>-->
+	<sqlMap resource="com/efit/znxy/sqlmap/mysql/MatchClothes.xml"/>
+	<sqlMap resource="com/efit/znxy/sqlmap/mysql/Clothes.xml"/>
+	<sqlMap resource="com/efit/znxy/sqlmap/mysql/User.xml"/>
+	<sqlMap resource="com/efit/znxy/sqlmap/mysql/Share.xml"/>
+	<sqlMap resource="com/efit/znxy/sqlmap/mysql/Comment.xml"/>
+	<sqlMap resource="com/efit/znxy/sqlmap/mysql/Search.xml"/>
+</sqlMapConfig>  

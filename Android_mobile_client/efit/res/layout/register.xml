@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffeeeeee"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="45.0dip"
+        android:background="#ff2a0a0d"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:id="@id/login_reback_btn"
+            android:layout_width="70.0dip"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/title_btn_back"
+            android:onClick="btn_back"
+            android:text="返回"
+            android:textColor="#ffffffff"
+            android:textSize="14.0sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="注册"
+            android:textColor="#ffffffff"
+            android:textSize="20.0sp" />
+
+        <ImageButton
+            android:layout_width="67.0dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5.0dip"
+            android:background="@drawable/title_btn_right"
+            android:src="@drawable/mm_title_btn_menu" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbarStyle="outsideOverlay" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3.0dip"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/preference_first_item"
+                    android:clickable="true"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:padding="8.0dip"
+                        android:text="用户名"
+                        android:textColor="#ff333333"
+                        android:textSize="17.0sp" />
+
+                    <EditText
+                        android:id="@+id/username"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="80.0dip"
+                        android:hint="6-20个字符"
+                        android:padding="8.0dip"
+                        android:textColor="#ff000000"
+                        android:textSize="15.0sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/preference_item"
+                    android:clickable="true"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:padding="8.0dip"
+                        android:text="性别"
+                        android:textColor="#ff333333"
+                        android:textSize="17.0sp" />
+
+                    <Spinner
+                        android:id="@+id/sexSpinner"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="80.0dip"
+                        android:entries="@array/sex_labels"
+                        android:padding="8.0dip"
+                        android:textColor="#ff000000"
+                        android:textSize="15.0sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/preference_item"
+                    android:clickable="true"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:padding="8.0dip"
+                        android:text="上身尺寸"
+                        android:textColor="#ff333333"
+                        android:textSize="17.0sp" />
+
+                    <Spinner
+                        android:id="@+id/tSizeSpinner"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="80.0dip"
+                        android:entries="@array/tSize_labels"
+                        android:padding="8.0dip"
+                        android:textColor="#ff000000"
+                        android:textSize="15.0sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/preference_item"
+                    android:clickable="true"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:padding="8.0dip"
+                        android:text="下身尺寸"
+                        android:textColor="#ff333333"
+                        android:textSize="17.0sp" />
+
+                    <Spinner
+                        android:id="@+id/dSizeSpinner"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="80.0dip"
+                        android:entries="@array/dSize_labels"
+                        android:padding="8.0dip"
+                        android:textColor="#ff000000"
+                        android:textSize="15.0sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/preference_item"
+                    android:clickable="true"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:padding="8.0dip"
+                        android:text="密码"
+                        android:textColor="#ff333333"
+                        android:textSize="17.0sp" />
+
+                    <EditText
+                        android:id="@+id/password"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="80.0dip"
+                        android:hint="6-16个字符"
+                        android:padding="8.0dip"
+                        android:password="true"
+                        android:textColor="#ff000000"
+                        android:textSize="15.0sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/preference_last_item"
+                    android:clickable="true"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:padding="8.0dip"
+                        android:text="确认密码"
+                        android:textColor="#ff333333"
+                        android:textSize="17.0sp" />
+
+                    <EditText
+                        android:id="@+id/password2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="80.0dip"
+                        android:padding="8.0dip"
+                         android:password="true"
+                        android:textColor="#ff000000"
+                        android:textSize="15.0sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="true"
+                        android:scaleType="matrix"
+                        android:src="@drawable/mm_submenu" />
+                </RelativeLayout>
+                
+
+
+            </LinearLayout>
+            <Button
+                android:layout_width="300.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14.0dip"
+                android:layout_marginTop="14.0dip"
+                 android:background="@drawable/btn_style_white"
+                android:onClick="takePhoto"
+                android:text="获取头像"
+                android:textColor="#ffffffff"
+                android:textSize="18.0sp" />
+            <Button
+                android:layout_width="300.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14.0dip"
+                android:layout_marginTop="14.0dip"
+                android:background="@drawable/btn_style_green"
+                android:onClick="btn_back_send"
+                android:text="注册"
+                android:textColor="#ffffffff"
+                android:textSize="18.0sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

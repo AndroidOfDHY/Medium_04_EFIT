@@ -1,0 +1,72 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-default.xml"/>
+	
+	<package name="base" extends="struts-default">		
+	<!-- 全局拦截器 -->
+		<interceptors>
+			<!-- 文件上传过滤器 -->
+			<interceptor name="adminFileUpload" class="org.apache.struts2.interceptor.FileUploadInterceptor">
+				<param name="maximumSize">5242880</param>
+			</interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="adminFileUpload"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 默认Action-->
+		<default-action-ref name="notFindAction"/> 
+		<!-- 全局reults -->
+		<global-results>
+			<result name="success">${tempFile}.jsp</result>
+			<result name="noauth">/no_auth.jsp</result>
+			<result name="error">/system/error.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="v_message" exception="java.io.FileNotFoundException"/>
+		</global-exception-mappings>
+		<action name="notFindAction">
+			<result>/system/404.html</result>
+		</action> 
+      <!--  <action name="login" class="com.score.action.LoginAction">
+
+			<result name="input">admin/files/index.jsp</result>
+			<result name="error">/login.jsp</result>
+			<result name="success"  >/admin/files/index.jsp</result>			
+		</action> -->	
+      </package>
+       <package name="user" extends="base" namespace="/user">
+       	<global-results>
+			<result name="success">/${tempFile}.jsp</result>
+			<result name="noauth">/no_auth.jsp</result>
+			<result name="error">/system/error.jsp</result>
+		</global-results>
+       <action name="match" class="com.efit.znxy.action.MatchAction"/>
+       <action name="user" class="com.efit.znxy.action.UserAction"/>
+       <action name="share" class="com.efit.znxy.action.ShareAction"/>
+       <action name="comment" class="com.efit.znxy.action.CommentAction"/>
+       <action name="clothes" class="com.efit.znxy.action.ClothesAction"/>
+       </package>
+    <package name="admin" extends="base" namespace="/admin">
+    <global-results>
+	<result name="success">/admin/${tempFile}.jsp</result>
+	<result name="noauth">/setting/no_auth.jsp</result>
+	</global-results>
+    <action name="fileUpload" class="com.efit.znxy.action.FileUploadAction">
+			<!-- 文件上传过滤器 -->
+				<interceptor-ref name="fileUpload">
+				<!-- 文件过滤 -->               
+			   <param name="allowedTypes">image/bmp,image/png,image/gif,image/jpeg,image/jpg,image/x-png, image/pjpeg
+			   </param>               
+				 <!-- 文件大小, 以字节为单位 -->
+				<param name="maximumSize">5242880</param>
+				</interceptor-ref>
+				<interceptor-ref name="defaultStack"/>
+				<result name="input">/admin/upload.jsp</result>
+    </action>
+    <action name="clothes" class="com.efit.znxy.action.ClothesAction"/>
+    <action name="share" class="com.efit.znxy.action.ShareAction"/>
+    <action name="user" class="com.efit.znxy.action.UserAction"/>
+    </package>
+	
+</struts>

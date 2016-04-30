@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE sqlMap
+PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="UpperClothes">
+	<typeAlias alias="Clothes" type="com.efit.znxy.entity.Clothes" />
+
+	<resultMap id="FullResultMap" class="Clothes">
+		<result property="clothesId" column="cothes_id" />
+		<result property="clothesName" column="name" />
+		<result property="sex" column="sex" />
+		<result property="size" column="size" />
+		<result property="keyWord" column="keyword" />
+		<result property="thumbAdress" column="thumb_adress" />
+		<result property="imageAdress" column="image_adress" />
+		<result property="matchValue" column="match_value" />
+	</resultMap>
+   <insert id="insert" parameterClass="Clothes">
+   insert into t_clothes (name,sex,size,keyword,thumb_adress,image_adress,match_value) values (#clothesName#,#sex#,#size#,#keyWord#,#thumbAdress#,#imageAdress#,#matchValue#)
+    </insert>
+</sqlMap>

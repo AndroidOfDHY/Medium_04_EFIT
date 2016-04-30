@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World</string>
+    <string name="app_name">E裳智换</string>
+    <string name="category_home">热门搭配</string>
+    <string name="category_channel">分享评论</string>
+    <string name="category_search">匹配搜索</string>
+    <string name="category_account">个人中心</string>
+    <string name="category_more">单件搜索</string>
+    <string name="search_hit">输入关键字</string>
+    <string name="search_text">搜索</string>
+    <string name="hot_search">热门搜索</string>
+    <string name="search_history">热门搜索</string>
+    <string name="clear_search_history">清楚</string>
+    <string name="favorite">收藏夹</string>
+    <string name="my_account">我的帐号</string>
+    <string name="setting">设置</string>
+    <string name="feedback">信息反馈</string>
+    <string name="help">使用帮助</string>
+    <string name="about">更多</string>
+	<string name="welcome_login">请使用已有的帐号登入</string>
+	<string name="welcome_navlogin">如果您不想注册登入，可直接点击进入浏览</string>
+    <string name="welcome_register">如果没有帐号请注册</string>
+    <string name="url">http://10.21.35.122:8080/efit_select_clothes/</string>
+</resources>

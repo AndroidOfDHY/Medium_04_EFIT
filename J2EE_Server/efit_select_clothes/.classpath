@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="resources/|com/efit/clothes/|test/" kind="src" path="src"/>
+	<classpathentry kind="src" path="src/resources"/>
+	<classpathentry kind="src" path="src/test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_6_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_5_CONTAINER"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/httpclient-4.2.1.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/httpclient-cache-4.2.1.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/httpcore-4.2.1.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/httpcore-ab-4.2.1.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/httpcore-nio-4.2.1.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/jxl.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/mysql-connector-java-5.0.3-bin.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/sqljdbc.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/xwork-core-2.1.6.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/c3p0-0.9.1.2.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/freemarker-2.3.15.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/ibatis-2.3.4.726.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/idate-common-1.0.1.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/jawin.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/jxl.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/ognl-2.7.3.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/poi-3.8.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/poi-ooxml-3.8.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/poi-ooxml-schemas-3.8.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/poi-scratchpad-3.8.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/stax-api-1.0.1.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/struts2-core-2.1.8.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/common/commons-beanutils-core-1.7.1.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/common/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/common/commons-fileupload-1.2.1.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/common/commons-io-1.4.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/common/commons-lang-2.1.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/common/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/common/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/common/log4j-1.2.13.jar"/>
+	<classpathentry kind="lib" path="E:/J2EE/myeclipse/MyEclipse 10/Workspaces/MyEclipse 10/efit_select_clothes/WebRoot/WEB-INF/lib/IdeaTechCommonJar/common/org.json.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
+</classpath>

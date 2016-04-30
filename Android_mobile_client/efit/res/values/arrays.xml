@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sex_labels">
+        <item>请选择性别</item>
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+    <string-array name="tSize_labels">
+        <item>请选择上身尺寸</item>
+        <item>s</item>
+        <item>m</item>
+        <item>l</item>
+    </string-array>
+    <string-array name="dSize_labels">
+        <item>请选择下身尺寸</item>
+        <item>s</item>
+        <item>m</item>
+        <item>l</item>
+    </string-array>
+    
+   <string-array name="sex_labels2">
+        <item>所有</item>
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+    <string-array name="tSize_labels2">
+        <item>所有</item>
+        <item>上身</item>
+        <item>下身</item>
+    </string-array>
+    <string-array name="dSize_labels2">
+        <item>所有</item>
+        <item>s</item>
+        <item>m</item>
+        <item>l</item>
+    </string-array>
+    
+    <string-array name="score">
+        <item>请评分</item>
+        <item>★</item>
+        <item>★★</item>
+        <item>★★★</item>
+        <item>★★★★</item>
+        <item>★★★★★</item>
+    </string-array>
+</resources>

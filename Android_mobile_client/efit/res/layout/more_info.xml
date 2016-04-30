@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#eee"
+        android:orientation="vertical" >
+<!--         
+        <LinearLayout 
+  			android:layout_width="fill_parent"
+  			android:layout_height="45dp"
+  			android:id="@+id/title" 
+  			android:background="#2a0a0d"
+  			android:gravity="center_vertical"  >  
+
+      		<TextView
+        		android:layout_width="wrap_content" 
+        		android:layout_height="wrap_content" 
+        		android:text="注册"
+        		android:layout_centerInParent="true"
+        		android:textSize="20sp"		
+				android:textColor="#ffffff" 
+				/> 
+			<ImageButton 
+			    android:layout_width="67dp" 
+        		android:layout_height="wrap_content"
+        		android:layout_alignParentRight="true" 
+        		android:layout_centerVertical="true"
+        		android:layout_marginRight="5dp"
+        		android:src="@drawable/mm_title_btn_menu"
+				android:background="@drawable/title_btn_right"
+			    />             
+			</LinearLayout>-->
+			        <RelativeLayout 
+  			android:layout_width="fill_parent"
+  			android:layout_height="45dp"
+  			android:id="@+id/title" 
+  			android:background="#2a0a0d"
+  			android:gravity="center_vertical"  >
+  			    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/nav_logo" />
+      		<TextView
+        		android:layout_width="wrap_content" 
+        		android:layout_height="wrap_content" 
+        		android:text="更多"
+        		android:layout_centerInParent="true"
+        		android:textSize="20sp"		
+				android:textColor="#ffffff" /> 
+			<ImageButton 
+			    android:layout_width="67dp" 
+        		android:layout_height="wrap_content"
+        		android:layout_alignParentRight="true" 
+        		android:layout_centerVertical="true"
+        		android:layout_marginRight="5dp"
+        		android:src="@drawable/mm_title_btn_menu"
+				android:background="@drawable/title_btn_right"
+			    />      
+		</RelativeLayout>
+		<RelativeLayout      				    
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:background="@drawable/preference_single_item" >
+      		<ImageView
+      		    android:id="@+id/add_friend"
+            	android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"        	     	
+        		android:scaleType="matrix"
+        		android:layout_centerVertical="true"
+        		android:layout_alignParentLeft="true"
+        		android:src="@drawable/find_more_friend_addfriend_icon" />    
+            <TextView
+        		android:layout_width="wrap_content" 
+        		android:layout_height="wrap_content"
+        		android:layout_toRightOf="@id/add_friend"
+        		android:layout_centerVertical="true"
+        		android:padding="8dp" 
+        		android:text="设置"
+        		android:textSize="17sp"		
+				android:textColor="#000" /> 
+			<ImageView
+            	android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"        	     	
+        		android:scaleType="matrix"
+        		android:layout_centerVertical="true"
+        		android:layout_alignParentRight="true"
+        		android:src="@drawable/mm_submenu" />      					
+   		</RelativeLayout>
+   		
+		<RelativeLayout      				    
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:background="@drawable/preference_single_item"
+            >
+      		<ImageView
+      		    android:id="@+id/add_friend_shake"
+            	android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"        	     	
+        		android:scaleType="matrix"
+        		android:layout_centerVertical="true"
+        		android:layout_alignParentLeft="true"
+        		android:src="@drawable/find_more_friend_addfriend_icon" />    
+            <TextView
+        		android:layout_width="wrap_content" 
+        		android:layout_height="wrap_content"
+        		android:layout_toRightOf="@id/add_friend_shake"
+        		android:layout_centerVertical="true"
+        		android:padding="8dp" 
+        		android:text="信息反馈"
+        		android:textSize="17sp"		
+				android:textColor="#000" /> 
+			<ImageView
+            	android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"        	     	
+        		android:scaleType="matrix"
+        		android:layout_centerVertical="true"
+        		android:layout_alignParentRight="true"
+        		android:src="@drawable/mm_submenu" />      					
+   		</RelativeLayout>
+   		
+		<RelativeLayout      				    
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:background="@drawable/preference_single_item"
+             >
+      		<ImageView
+      		    android:id="@+id/add_friend_shake"
+            	android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"        	     	
+        		android:scaleType="matrix"
+        		android:layout_centerVertical="true"
+        		android:layout_alignParentLeft="true"
+        		android:src="@drawable/find_more_friend_addfriend_icon" />    
+            <TextView
+        		android:layout_width="wrap_content" 
+        		android:layout_height="wrap_content"
+        		android:layout_toRightOf="@id/add_friend_shake"
+        		android:layout_centerVertical="true"
+        		android:padding="8dp" 
+        		android:text="使用帮助"
+        		android:textSize="17sp"		
+				android:textColor="#000" /> 
+			<ImageView
+            	android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"        	     	
+        		android:scaleType="matrix"
+        		android:layout_centerVertical="true"
+        		android:layout_alignParentRight="true"
+        		android:src="@drawable/mm_submenu" />      					
+   		</RelativeLayout>
+
+		<RelativeLayout      				    
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:background="@drawable/preference_single_item"
+            >
+      		<ImageView
+      		    android:id="@+id/add_friend_shake"
+            	android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"        	     	
+        		android:scaleType="matrix"
+        		android:layout_centerVertical="true"
+        		android:layout_alignParentLeft="true"
+        		android:src="@drawable/find_more_friend_addfriend_icon" />    
+            <TextView
+        		android:layout_width="wrap_content" 
+        		android:layout_height="wrap_content"
+        		android:layout_toRightOf="@id/add_friend_shake"
+        		android:layout_centerVertical="true"
+        		android:padding="8dp" 
+        		android:text="更多"
+        		android:textSize="17sp"		
+				android:textColor="#000" /> 
+			<ImageView
+            	android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"        	     	
+        		android:scaleType="matrix"
+        		android:layout_centerVertical="true"
+        		android:layout_alignParentRight="true"
+        		android:src="@drawable/mm_submenu" />      					
+   		</RelativeLayout>
+    </LinearLayout>

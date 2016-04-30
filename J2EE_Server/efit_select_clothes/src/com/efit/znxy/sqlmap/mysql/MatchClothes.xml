@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE sqlMap
+PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="MatchClothes">
+	<typeAlias alias="MatchClothes" type="com.efit.znxy.entity.MatchClothes" />
+	<resultMap id="FullResultMap" class="MatchClothes">
+	    <result property="tId" column="t_id" />
+	    <result property="tName" column="t_name" />
+		<result property="tSize" column="t_size" />
+		<result property="tDetail" column="t_detail" />
+		<result property="tThumbAdress" column="t_thumb_adress" />
+		<result property="tImageAdress" column="t_image_adress" />
+		<result property="dId" column="d_id" />
+		<result property="dName" column="d_name" />
+		<result property="dSize" column="d_size" />
+		<result property="dDetail" column="d_detail" />
+		<result property="dThumbAdress" column="d_thumb_adress" />
+		<result property="dImageAdress" column="d_image_adress" />
+		<result property="sex" column="d_sex" />
+	</resultMap>
+	
+	<select id="pageCount" resultClass="java.lang.Integer" parameterClass="java.util.HashMap">
+	SELECT count(*) FROM clothes d , clothes t 
+		 <dynamic prepend="where">
+		 
+		<isNotEmpty prepend="and" property="topSize">
+		t.size = #topSize#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="downSize">
+		d.size = #downSize#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="key">
+		t.keyword like '%$key$%' and d.keyword like '%$key$%'
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="sex">
+		t.sex= #sex# and d.sex= #sex#
+		</isNotEmpty>
+		and t.type='T' and d.type= 'D'
+		<![CDATA[and ABS(t.match_value-d.match_value)<=5]]>  
+		</dynamic>  
+		
+	</select>
+	
+	<select id="queryPageBySearch" resultMap="FullResultMap" parameterClass="java.util.HashMap">
+	SELECT t.clothes_id t_id,t.name t_name, t.size  t_size,t.detail t_detail,t.thumb_adress t_thumb_adress,t.image_adress t_image_adress,d.clothes_id d_id,d.name d_name,d.size d_size,d.detail d_detail,d.thumb_adress d_thumb_adress,d.image_adress d_image_adress,d.sex d_sex  FROM clothes d , clothes t 
+		 <dynamic prepend="where">
+		<isNotEmpty prepend="and" property="topSize">
+		t.size = #topSize#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="downSize">
+		d.size = #downSize#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="key">
+		t.keyword like '%$key$%' and d.keyword like '%$key$%'
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="sex">
+		t.sex= #sex# and d.sex= #sex#
+		</isNotEmpty>
+		and t.type='T' and d.type= 'D'
+		<![CDATA[and ABS(t.match_value-d.match_value)<=5]]>  
+		</dynamic>  
+		order by ABS(t.match_value-d.match_value) desc limit $offset$,$lastRows$
+	</select>
+	
+	<!--  <select id="pageCount" resultClass="java.lang.Integer" parameterClass="java.util.HashMap">
+	select count(*) FROM problem  
+	<dynamic prepend="where">
+	<isNotEmpty prepend="AND" property="startTime">
+	sub_time >= '$startTime$'
+	</isNotEmpty>
+	<isNotEmpty prepend="AND" property="endTime">
+	<![CDATA[sub_time <= '$endTime$' ]]>
+	</isNotEmpty>
+	<isNotEmpty prepend="AND" property="defunct">
+	defunct = #defunct#
+	</isNotEmpty>
+    </dynamic>
+    order by defunct desc
+    </select>
+	 <select id="findAll" resultMap="FullResultMap">
+		SELECT * FROM class
+	</select>
+	
+   <delete id="delete" parameterClass="java.lang.Integer">
+   delete from class where class_id = #classId#
+   </delete>
+   
+   <update id="update" parameterClass="Class">
+   update class set class_name=#className# where class_id = #classId#
+   </update>
+   
+   <insert id="insert" parameterClass="Class">
+   insert into class (class_name) values (#className#)
+   </insert>-->
+</sqlMap>

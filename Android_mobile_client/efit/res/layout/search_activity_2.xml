@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fffcfcfc"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="45.0dip"
+        android:background="#ff2a0a0d"
+        android:gravity="center_vertical" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/nav_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="搜索"
+            android:textColor="#ffffffff"
+            android:textSize="20.0sp" />
+
+        <ImageButton
+            android:id="@+id/right_btn"
+            android:layout_width="67.0dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5.0dip"
+            android:background="@drawable/title_btn_right"
+            android:src="@drawable/title_btn_function" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff2a0a0d"
+        android:gravity="center" >
+
+        <Spinner
+            android:id="@id/sexSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/edittext_search"
+            android:drawableLeft="@drawable/edittext_search_image"
+            android:entries="@array/sex_labels2"
+            android:hint="@string/search_hit"
+            android:paddingLeft="15.0dip"
+            android:textSize="14.0dip" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff2a0a0d"
+        android:gravity="center" >
+
+        <Spinner
+            android:id="@id/tSizeSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/edittext_search"
+            android:drawableLeft="@drawable/edittext_search_image"
+            android:entries="@array/tSize_labels2"
+            android:hint="@string/search_hit"
+            android:paddingLeft="15.0dip"
+            android:textSize="14.0dip" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff2a0a0d"
+        android:gravity="center" >
+
+        <Spinner
+            android:id="@id/dSizeSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/edittext_search"
+            android:drawableLeft="@drawable/edittext_search_image"
+            android:entries="@array/dSize_labels2"
+            android:hint="@string/search_hit"
+            android:paddingLeft="15.0dip"
+            android:textSize="14.0dip" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff2a0a0d"
+        android:gravity="center" >
+
+        <EditText
+            android:id="@+id/keyword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/edittext_search"
+            android:drawableLeft="@drawable/edittext_search_image"
+            android:hint="@string/search_hit"
+            android:paddingLeft="15.0dip"
+            android:textSize="14.0dip" />
+
+        <Button
+            android:id="@+id/submmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_search_background"
+            android:text="@string/search_text" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

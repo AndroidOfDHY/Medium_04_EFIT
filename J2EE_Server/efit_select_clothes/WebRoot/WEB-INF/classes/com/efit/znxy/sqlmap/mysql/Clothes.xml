@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE sqlMap
+PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="Clothes">
+	<typeAlias alias="Clothes" type="com.efit.znxy.entity.Clothes" />
+
+	<resultMap id="FullResultMap" class="Clothes">
+		<result property="clothesId" column="clothes_id" />
+		<result property="clothesName" column="name" />
+		<result property="type" column="type" />
+		<result property="sex" column="sex" />
+		<result property="size" column="size" />
+		<result property="keyword" column="keyword" />
+		<result property="brand" column="brand" />
+		<result property="position" column="position" />
+		<result property="detail" column="detail" />
+		<result property="thumbAdress" column="thumb_adress" />
+		<result property="imageAdress" column="image_adress" />
+		<result property="matchValue" column="match_value" />
+		<result property="submitTime" column="sub_time" />
+	</resultMap>
+
+	<resultMap id="SimpleResultMap" class="Clothes">
+		<result property="clothesId" column="clothes_id" />
+		<result property="clothesName" column="name" />
+		<result property="type" column="type" />
+		<result property="sex" column="sex" />
+		<result property="size" column="size" />
+		<result property="thumbAdress" column="thumb_adress" />
+		<result property="matchValue" column="match_value" />
+		<result property="submitTime" column="sub_time" />
+	</resultMap>
+	<insert id="insert" parameterClass="Clothes">
+		insert into clothes
+		(clothes_id,name,type,sex,size,keyword,brand,position,detail,thumb_adress,image_adress,match_value,sub_time)
+		values
+		(#clothesId#,#clothesName#,#type#,#sex#,#size#,#keyword#,#brand#,#position#,#detail#,#thumbAdress#,#imageAdress#,#matchValue#,#submitTime#)
+	</insert>
+	<select id="findById" resultMap="FullResultMap"
+		parameterClass="java.lang.String">
+		select * FROM clothes where clothes_id=$clothesId$
+	</select>
+
+	<update id="update" parameterClass="Clothes">
+		update clothes set
+		name=#clothesName#,type=#type#,sex=#sex#,size=#size#,keyword=#keyword#,position=#position#,brand=#brand#,thumb_adress=#thumbAdress#,image_adress=#imageAdress#,detail=#detail#,
+		match_value=#matchValue#,sub_time=#submitTime# where clothes_id
+		=#clothesId# 
+	</update>
+     
+    <delete id="delete" parameterClass="java.lang.String">
+   delete from clothes where clothes_id = #clothesId#
+   </delete>
+   
+	<select id="pageCount" resultClass="java.lang.Integer"
+		parameterClass="java.util.HashMap">
+		select count(*) FROM clothes
+		<dynamic prepend="where">
+			<isNotEmpty prepend="AND" property="type">
+				type = #type#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="keyword">
+				keyword like '%$keyword$%'
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="sex">
+				sex=#sex#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="size">
+				size=#size#
+			</isNotEmpty>
+			
+			<isNotEmpty prepend="AND" property="brand">
+				brand=#brand#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="position">
+				position=#position#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="maxValue">
+				<![CDATA[match_value <=$maxValue$]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="minValue">
+				match_value >=$minValue$
+			</isNotEmpty>
+		    <isNotEmpty prepend="AND" property="searchKey">
+				keyword like '%$searchKey$%'
+				or
+				name like '%$searchKey$%'
+				or
+				detail like '%$searchKey$%'
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="matchValue">
+				<![CDATA[ABS($matchValue$-match_value)<=5]]>  
+			</isNotEmpty>
+		</dynamic>
+	</select>
+
+	<select id="pageProperty" resultMap="FullResultMap"
+		parameterClass="java.util.HashMap">
+		select
+		*
+		FROM clothes
+		<dynamic prepend="where">
+			<isNotEmpty prepend="AND" property="type">
+			   type = #type#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="keyword">
+				keyword like '%$keyword$%'
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="sex">
+				sex=#sex#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="size">
+				size=#size#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="brand">
+				brand=#brand#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="position">
+				position=#position#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="maxValue">
+				<![CDATA[match_value <=$maxValue$]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="minValue">
+				match_value >=$minValue$
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="searchKey">
+				keyword like '%$searchKey$%'
+				or
+				name like '%$searchKey$%'
+				or
+				detail like '%$searchKey$%'
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="matchValue">
+				<![CDATA[ABS($matchValue$-match_value)<=5]]>  
+			</isNotEmpty>
+		</dynamic>
+		order by sub_time desc limit $offset$,$lastRows$
+	</select>
+</sqlMap>

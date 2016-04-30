@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE sqlMap
+PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="User">
+	<typeAlias alias="User" type="com.efit.znxy.entity.User" />
+	<resultMap id="FullResultMap" class="User">
+		<result property="userId" column="user_id" />
+		<result property="username" column="username" />
+		<result property="password" column="password" />
+		<result property="headAdreess" column="head_adreess" />
+		<result property="sex" column="sex" />
+		<result property="t_size" column="t_size" />
+		<result property="d_size" column="d_size" />
+	</resultMap>
+	
+	<insert id="insert" parameterClass="User">
+		insert into user
+		(username,password,head_adreess,sex,t_size,d_size)
+		values
+		(#username#,#password#,#headAdreess#,#sex#,#t_size#,#d_size#)
+	</insert>
+	<select id="findByUsername" resultMap="FullResultMap"
+		parameterClass="java.lang.String">
+		select * FROM user where username=#username#
+	</select>
+    <update id="update" parameterClass="User">
+		update user set
+		password=#password#,head_adreess=#headAdreess#,sex=#sex#,t_size=#t_size#,d_size=#d_size# where username
+		=#username# 
+	</update>
+	
+	
+	<select id="pageCount" resultClass="java.lang.Integer"
+		parameterClass="java.util.HashMap">
+		select count(*) FROM user
+	</select>
+
+	<select id="pageProperty" resultMap="FullResultMap"
+		parameterClass="java.util.HashMap">
+		select
+		*
+		FROM user
+		 limit $offset$,$lastRows$
+	</select>
+	
+	<delete id="delete" parameterClass="java.lang.Integer">
+   delete from user where user_id = $userId$
+   </delete>
+	<!-- <update id="update" parameterClass="Clothes">
+		update clothes set
+		name=#clothesName#,type=#type#,sex=#sex#,size=#size#,keyword=#keyword#,thumb_adress=#thumbAdress#,image_adress=#imageAdress#,detail=#detail#,
+		match_value=#matchValue#,sub_time=#submitTime# where cothes_id
+		=#clothesId# 
+	</update>
+
+	<select id="pageCount" resultClass="java.lang.Integer"
+		parameterClass="java.util.HashMap">
+		select count(*) FROM clothes
+		<dynamic prepend="where">
+			<isNotEmpty prepend="AND" property="type">
+				type = #type#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="keyword">
+				keyword like '%$keyword$%'
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="sex">
+				sex=#sex#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="maxValue">
+				<![CDATA[match_value <=$maxValue$]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="minValue">
+				match_value >=$minValue$
+			</isNotEmpty>
+		</dynamic>
+	</select>
+
+	<select id="pageProperty" resultMap="SimpleResultMap"
+		parameterClass="java.util.HashMap">
+		select
+		cothes_id,name,type,sex,size,thumb_adress,match_value,sub_time
+		FROM clothes
+		<dynamic prepend="where">
+			<isNotEmpty prepend="AND" property="type">
+				type = #type#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="keyword">
+				keyword like '%$keyword$%'
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="sex">
+				sex=#sex#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="maxValue">
+				<![CDATA[match_value <=$maxValue$]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="minValue">
+				match_value >=$minValue$
+			</isNotEmpty>
+		</dynamic>
+		order by sub_time desc limit $offset$,$lastRows$
+	</select> -->
+</sqlMap>

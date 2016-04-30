@@ -1,0 +1,8 @@
+#star{position:relative; }
+#star ul,#star span{float:left;display:inline;height:19px;line-height:19px;}
+#star ul{margin:0 10px;margin-left: -40px;}
+#star li{float:left;width:24px;cursor:pointer;text-indent:-9999px;background:url(img/star.png) no-repeat;}
+#star strong{color:#f60;padding-left:10px;}
+#star li.on{background-position:0 -28px;}
+
+#star p em{color:#f60;display:block;font-style:normal;}

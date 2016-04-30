@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE sqlMap
+PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="Comment">
+	<typeAlias alias="Comment" type="com.efit.znxy.entity.Comment" />
+
+	<resultMap id="FullResultMap" class="Comment">
+		<result property="commentId" column="comment_id" />
+		<result property="shareId" column="share_id" />
+		<result property="username" column="username" />
+		<result property="content" column="content" />
+		<result property="score" column="score" />
+		<result property="subTime" column="sub_time" />
+	</resultMap>
+	
+	<insert id="insert" parameterClass="Comment">
+		insert into comment
+		(share_id,username,content,score,sub_time)
+		values
+		(#shareId#,#username#,#content#,#score#,#subTime#)
+	</insert>
+	<select id="pageCount" resultClass="java.lang.Integer"
+		parameterClass="java.util.HashMap">
+		select count(*) FROM comment
+		<dynamic prepend="where">
+			<isNotEmpty prepend="AND" property="shareId">
+				share_id = #shareId#
+			</isNotEmpty>
+			</dynamic>
+	</select>
+	<select id="pageProperty" resultMap="FullResultMap" parameterClass="java.util.HashMap">
+		select * FROM comment
+		<dynamic prepend="where">
+			<isNotEmpty prepend="AND" property="shareId">
+				share_id = #shareId#
+			</isNotEmpty>
+			</dynamic>
+		order by sub_time desc limit $offset$,$lastRows$
+	</select>
+	<select id="socreAvg" resultClass="java.lang.Integer" parameterClass="java.lang.String">
+		select avg(score) FROM comment where share_id=#shareId#
+	</select>
+
+</sqlMap>
